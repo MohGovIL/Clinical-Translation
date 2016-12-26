@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
     $translationDB = $_POST['database'];
 
     $target_dir = "";
-    $target_file = $target_dir . 'clinikal_transllation.csv';
+    $target_file = $target_dir . 'clinikal_translation.csv';
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
@@ -34,10 +34,10 @@ if(isset($_POST['submit'])){
             $output = array();
             /*$old_path = getcwd();
             chdir('/home/amiel/projects/translation');*/
-            $output = shell_exec("bash updateTransllation.sh $mysqlroot $mysqlrootpass $translationDB");
+            $output = shell_exec("bash updateTranslation.sh $mysqlroot $mysqlrootpass $translationDB");
 
            // print_r($output ? 'yyy' : 'nnn');
-            $file = 'clinikal_transllation.sql';
+            $file = 'clinikal_translation.sql';
             if ($output && file_exists($file)) {
                 header('Content-Description: File Transfer');
                 header('Content-Type: application/octet-stream');

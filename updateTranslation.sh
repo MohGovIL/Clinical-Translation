@@ -32,9 +32,9 @@ mysql -u${MYSQLUSERNAME} -p${MYSQLPASSWORD} ${MYSQLDATABASE}  < customTranslatio
 # sync custom lang
 php sync_lang_definition.php || error_exit "sync translattion failed!"
 
-echo "create clinikal_translattion.sql file"
-rm clinikal_transllation.sql
-mysqldump -usuperroot -psuperroot1 --add-drop-table openemr_transllation lang_constants lang_custom lang_definitions lang_languages > clinikal_transllation.sql || error_exit "create file translattion failed!"
+echo "create clinikal_translation.sql file"
+rm clinikal_translation.sql
+mysqldump -u${MYSQLUSERNAME} -p${MYSQLPASSWORD} --add-drop-table ${MYSQLDATABASE}  lang_constants lang_custom lang_definitions lang_languages > clinikal_translation.sql || error_exit "create file translattion failed!"
 
 echo "finish succesfully"
 
