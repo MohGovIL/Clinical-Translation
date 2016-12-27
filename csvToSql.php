@@ -2,7 +2,7 @@
 
 $exists = array();
 
-if (($handle = fopen("clinikal_transllation.csv", "r")) !== FALSE) {
+if (($handle = fopen("clinikal_translation.csv", "r")) !== FALSE) {
   //  file_put_contents('mezigaTranslation2.sql', "");
     while (($data = fgetcsv($handle, 1000, "^")) !== FALSE) {
 
