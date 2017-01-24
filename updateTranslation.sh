@@ -27,6 +27,8 @@ rm customTranslation.sql
 echo "convert csv to sql"
 php csvToSql.php || error_exit "csv to sql translattion failed!"
 
+#truncate old custom translation
+mysql -u${MYSQLUSERNAME} -p${MYSQLPASSWORD} ${MYSQLDATABASE} -e "TRUNCATE table lang_custom;"
 # insert custom languge to openemr
 mysql -u${MYSQLUSERNAME} -p${MYSQLPASSWORD} ${MYSQLDATABASE}  < customTranslation.sql
 # sync custom lang
