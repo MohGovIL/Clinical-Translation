@@ -13,6 +13,7 @@ function error_exit
 # get last openemr translation
 rm languageTranslations_utf8.sql
 wget https://raw.githubusercontent.com/openemr/translations_development_openemr/master/languageTranslations_utf8.sql
+chmod 755 languageTranslations_utf8.sql
 
 # adding transaction for efficiency
 sed -i "1i\\SET autocommit=0; START TRANSACTION;" languageTranslations_utf8.sql
