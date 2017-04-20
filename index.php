@@ -48,7 +48,7 @@ switch ($_GET['p']){
         include_once ("pages/add_lang.php");
         break;
     default:
-        include_once ("pages/add_lang.php");
+        include_once ("pages/edit_lang.php");
         break;
 }
 
