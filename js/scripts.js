@@ -84,7 +84,7 @@ $( document ).ready(function() {
             { name: "Lang_id", type: "text", width: 150, editing: false, visible: false},
             { name: "Constants", type: "text", width: 150},
             { name: "Lang", type: "text", width: 150 },
-            { type: "control" }
+            { type: "control", deleteButton: false }
         ]
     });
 });
