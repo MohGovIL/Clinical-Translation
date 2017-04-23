@@ -55,3 +55,8 @@ label.error{
 #jsGrid{
     color: #000;
 }
+
+.jsgrid-pager{
+    background-color: whitesmoke;
+    padding: 10px;
+}
