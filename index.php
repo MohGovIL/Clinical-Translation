@@ -50,9 +50,6 @@ switch ($_GET['p']){
     case "upgradelang":
         include_once ("pages/updatelang.html");
         break;
-    case "export":
-        include_once ("pages/exportlang.php");
-        break;
     default:
         include_once ("pages/edit_lang.html");
         break;
