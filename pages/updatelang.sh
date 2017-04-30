@@ -2,8 +2,8 @@
 #mysql root settings
 MYSQL_SEVER=localhost
 MYSQL_PORT=3306
-MYSQL_ADMIN_USER_NAME=root
-MYSQL_ADMIN_PASSWORD=root1
+MYSQL_ADMIN_USER_NAME=superroot
+MYSQL_ADMIN_PASSWORD=superroot1
 MYSQL_DATABASE_NAME=translate
 FILE_NAME=../dump/dump.sql
 
@@ -17,7 +17,7 @@ sed -i -- 's/lang_languages/community_lang_languages/g' $FILE_NAME
 sed -i "1i\\SET autocommit=0; START TRANSACTION;" $FILE_NAME
 sed -i "$ a\\COMMIT; SET autocommit=1;" $FILE_NAME
 
-mysql -u${MYSQL_ADMIN_USER_NAME} -p${MYSQL_ADMIN_PASSWORD} ${MYSQL_DATABASE_NAME}  < $FILE_NAME || error_exit "import translattion failed!"
+mysql -u${MYSQL_ADMIN_USER_NAME} -p${MYSQL_ADMIN_PASSWORD} ${MYSQL_DATABASE_NAME}  < $FILE_NAME "import translattion failed!"
 mysql -u${MYSQL_ADMIN_USER_NAME} -p${MYSQL_ADMIN_PASSWORD} -h${MYSQL_SEVER} -P${MYSQL_PORT} -e "DELETE FROM community_lang_languages WHERE lang_id NOT IN(1,7);" ${MYSQL_DATABASE_NAME}
 mysql -u${MYSQL_ADMIN_USER_NAME} -p${MYSQL_ADMIN_PASSWORD} -h${MYSQL_SEVER} -P${MYSQL_PORT} -e "DELETE FROM community_lang_definitions WHERE lang_id NOT IN(1,7);" ${MYSQL_DATABASE_NAME}
 mysql -u${MYSQL_ADMIN_USER_NAME} -p${MYSQL_ADMIN_PASSWORD} -h${MYSQL_SEVER} -P${MYSQL_PORT} -e "DELETE FROM community_lang_constants WHERE constant_name IN (SELECT constant_name FROM lang_constants);" ${MYSQL_DATABASE_NAME}
