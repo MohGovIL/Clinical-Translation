@@ -47,6 +47,9 @@ switch ($_GET['p']){
     case "add":
         include_once ("pages/add_lang.php");
         break;
+    case "upgradelang":
+        include_once ("pages/updatelang.php");
+        break;
     default:
         include_once ("pages/edit_lang.php");
         break;
@@ -59,4 +62,5 @@ switch ($_GET['p']){
 
 <?php
 session_destroy();
+$db->disconnect();
 ?>

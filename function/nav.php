@@ -6,6 +6,7 @@ function nav(){
             <ul class="nav  navbar-nav">
                 <li role="presentation" id="inheritance"><a href="index.php?p=edit">ערוך תרגום</a></li>
                 <li role="presentation" id="list"><a href="index.php?p=add">הוסף תרגום</a></li>
+                <li role="presentation" id="list"><a href="index.php?p=upgradelang">ייבא תרגומים מהקהילה</a></li>
             </ul>
         </div>
        </nav>
