@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row bg-gray">
+        <div class="col-xs-12 laoding-from-community">
+            <img style="margin: auto; display: block;margin-top: 10px;" src="images/hourglass.svg" />
+            <div class="load-community-text rtl">...מעלה תורגמים מהקהילה, אנא המתן</div>
+        </div>
+        <div class="col-xs-12  finish-laoding-from-community">
+            <img style="margin: auto; display: block;width: 120px;height: 120px;margin-top: 10px;" src="images/v.png" />
+            <div class="load-community-text" style="color: #336715">מערכת התרגומים עודכנה בהצלחה</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $( document ).ready(function() {
+        $.post( "pages/updatelang.php", function( data ) {
+           if(data == 1 || data == "1"){
+               $('.laoding-from-community').fadeOut(function () {
+                   $('.finish-laoding-from-community').fadeIn();
+               });
+
+            }
+        });
+    });
+
+</script>
