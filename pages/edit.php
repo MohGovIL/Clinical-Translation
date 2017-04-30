@@ -20,7 +20,7 @@ switch ($_REQUEST['p']){
         }
 
         if($_REQUEST['Lang']){
-          $WHERE .= " AND ld.definition = '{$_REQUEST['Lang']}'";
+          $WHERE .= " AND ld.definition LIKE '%{$_REQUEST['Lang']}%'";
         }
 
 
