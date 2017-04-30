@@ -16,7 +16,7 @@ switch ($_REQUEST['p']){
 
         $WHERE = "AND 1=1";
         if($_REQUEST['Constants']){
-          $WHERE .= " AND lc.constant_name = '{$_REQUEST['Constants']}'";
+          $WHERE .= " AND lc.constant_name LIKE '%{$_REQUEST['Constants']}%'";
         }
 
         if($_REQUEST['Lang']){
