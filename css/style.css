@@ -60,3 +60,19 @@ label.error{
     background-color: whitesmoke;
     padding: 10px;
 }
+
+.bg-gray{
+    background-color: #e7e7e7;;
+}
+
+.load-community-text{
+
+    text-align: center;
+    color: #0e06ff;
+    font-size: 38px;
+    direction: ltr;
+}
+
+.finish-laoding-from-community{
+    display: none;
+}
