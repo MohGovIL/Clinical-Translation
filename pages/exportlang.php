@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Jerusalem");
 include_once ("../function/mysqliconf.php");
 
 $statement = $db->rawQuery("SELECT languages.lang_description, 
