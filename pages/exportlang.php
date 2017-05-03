@@ -55,10 +55,10 @@ $sql .= "DROP TABLE IF EXISTS lang_custom;CREATE TABLE lang_custom ( lang_descri
 $Transaction = "START TRANSACTION;";
 $Transaction .= $sql;
 $Transaction .= "COMMIT;";
-
+date_default_timezone_set('Asia,Jerusalem');
 header('Content-Type: application/octet-stream');
 header("Content-Transfer-Encoding: Binary");
-header('Content-Disposition: attachment; filename="export_'.date('Y-m-d_H:i:s').'.sql"');
+header('Content-Disposition: attachment; filename="export_'.date('Y-m-d_H-i-s').'.sql"');
 
 
 echo $Transaction;
