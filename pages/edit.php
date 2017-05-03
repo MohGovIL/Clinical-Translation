@@ -7,6 +7,7 @@ $_GET = null;
 
 
 foreach ($_REQUEST as $key => $value){
+    $value = htmlentities($value, ENT_QUOTES | ENT_IGNORE, "UTF-8");
     $_REQUEST[$key] = $db->escape($value);
 }
 
