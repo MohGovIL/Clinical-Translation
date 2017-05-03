@@ -31,6 +31,7 @@ if(!preg_match('/^[^א-ת]+$/', $_REQUEST['constants'])){
 }
 
 foreach ($_REQUEST as $key => $value){
+    $value = trim($value);
     $value = htmlentities($value, ENT_QUOTES | ENT_IGNORE, "UTF-8");
     $_REQUEST[$key] = $db->escape($value);
 }
