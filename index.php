@@ -4,6 +4,7 @@
  * Date: 18/04/17
  * Time: 13:57
  */
+date_default_timezone_set("Asia/Jerusalem");
 session_start();
 include_once ("function/nav.php");
 include_once ("function/mysqliconf.php");
