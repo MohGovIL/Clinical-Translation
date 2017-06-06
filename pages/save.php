@@ -32,8 +32,9 @@ if(!preg_match('/^[^א-ת]+$/', $_REQUEST['constants'])){
 
 foreach ($_REQUEST as $key => $value){
     $value = trim($value);
-    $value = htmlentities($value, ENT_QUOTES | ENT_IGNORE, "UTF-8");
-    $_REQUEST[$key] = $db->escape($value);
+    // remove security function beacuse openemr doing htmlentities function in the view
+    //$value = htmlentities($value, ENT_QUOTES | ENT_IGNORE, "UTF-8");
+    //$_REQUEST[$key] = $db->escape($value);
 }
 
         $db->where ("constant_name", $_REQUEST['constants']);
